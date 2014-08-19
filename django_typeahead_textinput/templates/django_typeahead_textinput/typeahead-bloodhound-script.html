@@ -1,0 +1,25 @@
+{% autoescape off %}
+<script type="text/javascript">
+    var {{ typeahead_name }} = new Bloodhound({
+                datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                queryTokenizer: Bloodhound.tokenizers.whitespace,
+                limit: 10,
+                {{ typeahead_local }}
+                {{ typeahead_prefetch }}
+                {{ typeahead_remote }}
+    });
+
+    {{ typeahead_name }}.initialize();
+
+    $('#{{ typeahead_name }}').typeahead({
+      hint: false,
+      highlight: true,
+      minLength: 1
+    },
+    {
+      name: '{{ typeahead_name }}',
+      displayKey: 'value',
+      source: {{ typeahead_name }}.ttAdapter()
+    });
+</script>
+{% endautoescape %}
