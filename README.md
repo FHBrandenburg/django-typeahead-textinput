@@ -5,7 +5,7 @@
 * __jQuery__ since Typeahead is a jQuery plugin
 
 ## Installation:
-* pip install django-typeahead-textinput-0.2.zip
+* pip install django-typeahead-textinput-0.3.zip
 
 ## Usage:
 * Add `django_typeahead_textinput` to the installed applications in your settings.py
